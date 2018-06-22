@@ -1,0 +1,22 @@
+
+public class whatfix2 {
+
+	public static void main(String[] args) {
+		whatfix2 ob = new whatfix2();
+		int a[] = {1,2,3};
+		fun(a);
+		System.out.println(a[1]);
+	}
+
+	private static void fun(int[] b) {
+		b[0]=122;
+		fun2(b);
+	}
+
+	private static void fun2(int[] c) {
+		// TODO Auto-generated method stub
+		c[1]=112;
+		
+	}
+
+}

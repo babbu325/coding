@@ -1,0 +1,34 @@
+package tree;
+
+public class replace_node_binary_tree_sum_inorder_predecessor_successor {
+
+	static Node root;
+	public static void main(String[] args) {
+	replace_node_binary_tree_sum_inorder_predecessor_successor tree = new replace_node_binary_tree_sum_inorder_predecessor_successor();
+	 tree.root = new Node(1);
+	 tree.root.l= new Node(2);
+	 tree.root.l.l = new Node(4);
+	 tree.root.l.r = new Node(5);
+	 tree.root.r = new Node(3);
+	 tree.root.r.l = new Node(6);
+	 tree.root.r.r = new Node(7);
+	 replace(root);
+		
+	}
+	private static void replace(Node root2) {
+		if(root==null)	return;
+		
+		root.d = left(root.l) + right(root.r);
+		
+	}
+	private static int right(Node r) {
+		if(r == null) return 0;
+		
+		return 0;
+	}
+	private static int left(Node l) {
+		
+		return 0;
+	}
+
+}

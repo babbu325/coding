@@ -1,0 +1,51 @@
+package tree;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class replace_node_binary_tree_sum_inorder_predecessor_successor {
+
+	static Node root;
+	static ArrayList<Integer> a = new ArrayList<Integer>();
+	
+	public static void main(String[] args) {
+	replace_node_binary_tree_sum_inorder_predecessor_successor tree = new replace_node_binary_tree_sum_inorder_predecessor_successor();
+	 tree.root = new Node(1);
+	 tree.root.l= new Node(2);
+	 tree.root.l.l = new Node(4);
+	 tree.root.l.r = new Node(5);
+	 tree.root.r = new Node(3);
+	 tree.root.r.l = new Node(6);
+	 tree.root.r.r = new Node(7);
+	 addToArray(root, a);
+	 replace(root,a,0);
+	 inorder(root);
+	}
+	
+	private static void replace(Node root2, ArrayList<Integer> a2,int i) {
+		// TODO Auto-generated method stub
+		if(root2==null) return;
+		replace(root2.l,a,i);
+		if(i==0) root2.d = a2.get(1);
+		else if(i==a2.size()-1) root2.d=a2.get(a2.size()-2);
+		else root2.d=a2.get(i-1)+ a2.get(i+1);
+		replace(root)
+		
+	}
+
+	private static void inorder(Node root) {
+		// TODO Auto-generated method stub
+		if(root==null)return;
+		inorder(root.l);
+		System.out.print(root.d+" ");
+		inorder(root.r);
+		
+	}
+	
+	private static void addToArray(Node root, ArrayList a) {
+		if(root==null)	return;
+		addToArray(root.l, a);
+		a.add(root.d);
+		addToArray(root.r, a);
+	}
+}

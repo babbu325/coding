@@ -1,0 +1,25 @@
+//this will create directries of files
+package file;
+
+import java.io.File.*;
+import java.io.FileNotFoundException;
+import java.util.*;//Formatter;
+import java.util.Scanner;
+
+public class directries {
+
+	public static void main(String[] args) {
+		Scanner sc;
+		Formatter f ;
+		
+	    try {
+			f= new Formatter("dir1");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

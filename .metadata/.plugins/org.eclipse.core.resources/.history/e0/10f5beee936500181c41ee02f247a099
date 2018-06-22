@@ -1,0 +1,11 @@
+package array;
+
+public class subarrayProductLessThanK {
+
+	public static void main(String[] args) {
+		int[] a = {1,2,3};
+	    int[] p=new int[a.length];
+	    for(int i=1;i<a.length;i++)p[i]= a[i]*p[i-1];
+	    for(int i: p)System.out.println(i);
+	}
+}

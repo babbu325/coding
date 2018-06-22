@@ -1,0 +1,11 @@
+//http://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/
+package dynemicPrograming;
+
+public class shortestpath {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

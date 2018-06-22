@@ -1,0 +1,15 @@
+//verable size argument
+import java.util.Random;
+import java.util.Scanner;
+
+class hello{
+     public static void main(String args[]) {	
+    	 hello3 h3 = new hello3(1,2,3);
+    	 
+    	 hello2  h2 = new hello2("ram",h3);
+    	 System.out.print("\n");
+    	 System.out.println(h2);
+		
+	}
+		
+}

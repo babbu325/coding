@@ -1,0 +1,15 @@
+
+public class whatfix2 {
+
+	public static void main(String[] args) {
+		whatfix2 ob = new whatfix2();
+		int a[] = {1,2,3};
+		ob.fun(a);
+		
+	}
+
+	private void fun(int[] a) {
+		a[0]=122;
+	}
+
+}

@@ -1,0 +1,15 @@
+package graph;
+
+public class cycleInDirectedgraph {
+
+	static Graph g;
+	void addedge(Graph g, int s, int d){
+		g.adjlist[s].add(d);	
+		
+	}
+	public static void main(String[] args) {
+     g = new Graph(4);
+		
+	}
+
+}

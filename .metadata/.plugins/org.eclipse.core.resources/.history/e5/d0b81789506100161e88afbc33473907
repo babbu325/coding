@@ -1,0 +1,95 @@
+package linkedlist;
+
+import java.util.Scanner;
+
+class list
+{
+String s;
+list left;
+list right;
+
+              list()
+              {
+            	this.left=null;
+            	this.right=null;
+               }
+}
+
+public class linkedlist1 {
+
+	public static void main(String[] args) {
+	
+		Scanner sc1=new Scanner(System.in);
+		Scanner sc2=new Scanner(System.in);
+		//sc.useDelimiter("\\n");
+		System.out.println("Enter the no. of moves:");
+		int n=sc1.nextInt();
+		
+		list root=new list();
+		list head=new list();
+		head=root;
+		
+		
+		System.out.println("Enter moves:");
+		
+		String str=sc2.nextLine();
+		if(str.contains("begins"))
+		root.s=str;
+		
+		//System.out.println(root.s);
+		while(n-1>0)
+		{   //System.out.println(n);
+			list temp=new list();
+			str=sc2.nextLine();
+			temp.s=str;
+			
+			if(str.contains("left")){
+			root.left=temp;
+			root=temp;
+		}
+			else if(str.contains("right"))
+			{
+				root.right=temp;
+				root=temp;
+			}
+			n--;
+		}
+		
+		
+		
+		System.out.println(root.s);
+		root=head;	
+		System.out.println(root.s);
+       // print(root);
+         		
+	}
+
+	private static void print(list root) {
+		 System.out.println(root.s);
+		if(root==null) return;
+		
+		while(root!=null)
+		 {
+			if(root.left != null)
+		print(root.left);
+			
+			else if(root.right != null)
+				print(root.right);
+		 }
+			if(root.s.contains("end"))
+				root.s.replace("end", "start");
+			else	if(root.s.contains("left"))
+				root.s.replace("left", "right");
+			else if(root.s.contains("right"))
+				root.s.replace("right", "left");
+			else	if(root.s.contains("start"))
+				root.s.replace("start", "end");
+			
+		    System.out.println(root.s);
+			
+		
+		
+		return;
+	}
+
+}

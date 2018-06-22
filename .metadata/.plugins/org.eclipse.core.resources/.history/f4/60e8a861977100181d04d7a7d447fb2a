@@ -1,0 +1,21 @@
+package string;
+
+public class divOf8 {
+
+	public static void main(String[] args) {
+		String s = "12340";
+		System.out.println(fun(s));
+	}
+
+	private static char[] fun(String s) {
+		// TODO Auto-generated method stub
+		int l = s.length();
+		String str = s+s;
+		for(int i=1;i<l;i++){
+			int d = Integer.parseInt(str.substring(i,l));
+			System.out.println(d);
+		}
+		return null;
+	}
+
+}

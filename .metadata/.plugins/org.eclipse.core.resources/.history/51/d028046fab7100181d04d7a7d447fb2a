@@ -1,0 +1,18 @@
+package string;
+
+import java.util.Arrays;
+
+public class check {
+
+	public static void main(String[] args) {
+		
+		int[][] a = {{1,2,3,4},
+				     {2,3,4,1}};
+		int[] ar = {1,3,4};
+		char[] c = {'q', 'e'};
+		String str = new String(c);
+		String s = Arrays.toString(ar)+ Arrays.toString(ar);
+		System.out.println(s.lastIndexOf(Arrays.toString(a[0])));
+	}
+
+}

@@ -1,0 +1,19 @@
+import java.util.*;
+public class test {
+	public static int solution(int K, int L, int M, int N, int P, int Q, int R, int S) {
+        // write your code in Java SE 8
+        int a =0;
+        int a1 = Math.abs(M-K)*Math.abs(L-N);
+        int a2 = Math.abs(P-R)* Math.abs(Q-S);
+        int i_c = (Math.min(M, R)- Math.max(K, P)) * (Math.min(N,S)-Math.max(L, Q));
+        a = a1+a2-i_c;
+		
+        return a;
+    }
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(solution(-4,1,2,6,0,-1,4,3));
+		
+	}
+}

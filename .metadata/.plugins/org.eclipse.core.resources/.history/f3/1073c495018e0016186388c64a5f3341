@@ -1,0 +1,21 @@
+package string;
+
+public class DeleteGivenChar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str= "abcdefgdhdi";
+		String s="";
+		char c= 'd';
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)==c){
+				s= str.substring(0, i);
+				s=s+ str.substring(i+1);
+				str = s;
+			}
+		}
+		System.out.println(s);
+
+	}
+
+}

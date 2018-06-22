@@ -1,0 +1,24 @@
+import java.util.*;
+public class test {
+	public static void main(String[] args) {
+		String s = "12345";
+		char[] c = s.toCharArray();
+		char[] a = {'a', 'b', 'c'};
+	String ss = new String(a); 
+		System.out.println(c[2]-'0'+ c[1]-'0');
+	}
+}
+
+Hi Ma'am
+
+Hope you are doing well.
+
+My name is Ramendra kumar and i am currently working at olacabs as software developer.
+I have 1 year of experience and actively looking for better opportunity  in NCR region.
+Please find attached resume and have some time to review it.
+
+Looking forward for your response.
+
+Thanks and Regards
+Ramendra kumar
+9591148575

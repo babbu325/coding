@@ -1,0 +1,43 @@
+package string;
+
+public class permutation {
+
+	
+	static void swap(char a,char b)
+	{
+		char t;
+		 t=a;
+		a=b;
+		b=t;
+	}
+	
+	
+	static void permute(String s,int l,int n )
+	{
+		if(l==n)
+			System.out.println(s);
+		else{
+			
+			for(int i=0;i<=n;i++)
+			{
+				swap(s.charAt(l),s.charAt(i));
+				permute(s,l+1,n);
+				swap(s.charAt(i),s.charAt(l));
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+
+			String s="abc";
+			int n=s.length();
+			permute(s,2,n-1);
+			
+		}
+}
+
+

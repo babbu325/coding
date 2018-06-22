@@ -1,0 +1,10 @@
+package tree;
+
+class Node{
+	int d; 
+	Node l,r;
+	public Node(char i){
+		d=i;
+		l=r=null;
+	}
+}

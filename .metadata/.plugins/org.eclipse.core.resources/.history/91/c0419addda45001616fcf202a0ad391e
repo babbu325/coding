@@ -1,0 +1,25 @@
+
+public enum  hello2{
+    
+    ram1("name1", "age1","sex1"),
+    ram2("name2","age2","sex2"),
+    ram3("name3","age3","sex3");
+   
+	private String name;
+	private String age;
+	private String sex;
+	
+	public  hello2( n, hello3 bd )
+	{
+	 name=n;
+	 bday = bd;
+	 System.out.println(bday);
+	}
+	
+	 	
+	 public String toString()
+	 {
+		 return String.format("my name is %s, and bday is %s", name, bday);
+		 
+	 }
+}

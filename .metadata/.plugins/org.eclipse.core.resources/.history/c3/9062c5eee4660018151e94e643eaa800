@@ -1,0 +1,21 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class gsachs_practice{
+	public static void main(String[] args) {
+
+		int x =2,y=10,z =15;
+		System.out.println(fun(x,y,z));
+		
+	}
+
+	private static int fun(int x, int y, int z) {
+		// TODO Auto-generated method stub
+		int r = z-y;
+		int b=y;
+		int[] a =  new int[r+1];
+		for(int i=0;i<=r;i++)a[i]= x*b++; 
+		System.out.println(a[5]);
+		return 0;
+	}
+}

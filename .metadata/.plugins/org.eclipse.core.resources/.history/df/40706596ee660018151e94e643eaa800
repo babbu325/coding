@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class gsachs_practice{
+	public static void main(String[] args) {
+
+		int x =2,y=10,z =15;
+		System.out.println(fun(x,y,z));
+		
+	}
+
+	private static int fun(int x, int y, int z) {
+		int r = z-y;
+		int b=y;
+		int[] a =  new int[r+1];
+		for(int i=0;i<=r;i++)a[i]= x*b++; 
+		int c=0;
+		for(int i=0;i<=r;i++){
+			String s1 = Integer.toString(y++);
+			String s2 = Integer.toString(a[i]);
+			boolean f = true;
+			for(int j=0;j<s1.length();j++){
+				if(s2.indexOf(s1.charAt(j))!= -1){
+					f=false;
+					break;
+				}
+			}
+			if(f==true)c++;
+		}
+		
+		return c;
+	}
+}

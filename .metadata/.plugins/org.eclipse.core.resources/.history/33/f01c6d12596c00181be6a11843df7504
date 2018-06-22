@@ -1,0 +1,8 @@
+package graph;
+import java.util.*;
+
+public class Graph {
+	int v;
+	LinkedList<Integer> adjlist[];
+	
+}

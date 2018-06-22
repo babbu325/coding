@@ -1,0 +1,33 @@
+package matrix;
+
+public class LargestRectangle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] a= {1,2,3,4,5};
+		int max=0;
+		int top=-1;
+		int i=0,area=0;
+		int[] s = new int[a.length];
+		s[++top]=a[0];
+		
+		for(i=1;i<a.length;i++){
+			if(a[i]>=s[top] )
+				s[++top]=a[i];
+			else{
+				while(s[top]>a[i]){
+				if(top==0){
+					area = a[top--]*(i+1);
+					break;}
+				else {
+					area = a[top--]*(i-top);
+				}
+				max = Math.max(max, area);
+			}
+			}
+		}
+       System.out.println(max);
+		
+	}
+}

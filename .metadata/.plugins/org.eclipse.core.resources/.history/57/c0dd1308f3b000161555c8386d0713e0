@@ -1,0 +1,14 @@
+//this will create directries of files
+package file;
+
+import java.io.File;
+
+public class directries {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File f= new File("C:/Users/anju/Desktop/CCSP.xlsx");
+
+	}
+
+}

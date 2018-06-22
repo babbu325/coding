@@ -1,0 +1,10 @@
+package array;
+
+public class subarrayProductLessThanK {
+
+	public static void main(String[] args) {
+		int[] a = {1,2,3};
+	
+	int[] p=new int[a.length];
+	}
+}

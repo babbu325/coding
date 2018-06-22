@@ -1,0 +1,13 @@
+package string;
+
+public class check {
+
+	public static void main(String[] args) {
+		
+		int[][] a = {{1,2,3,4},
+				     {2,3,4,5}};
+		String s = a[1].toString();
+		System.out.println(s);
+	}
+
+}

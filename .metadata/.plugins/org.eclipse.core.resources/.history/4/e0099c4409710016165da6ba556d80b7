@@ -1,0 +1,67 @@
+package tree;
+
+public class widthofTree {
+
+	static tree getnode(int d)
+	{
+		tree t=new tree();
+		t.data=d;
+		t.l=null;
+		t.r=null;
+		return t;
+	}
+	
+	static void width(tree root)
+	{
+		tree[] a=new tree[100];
+		int e = 0,s = 0,r,f;
+		r=-1;f=0;
+		if(root==null)
+			System.out.println(0);
+		
+		a[++r]=root;
+		int max=1;
+		while(f<=r)
+		{
+			System.out.println(max);
+			s=f;
+			e=r;
+			if((e-s+1>max))
+				max=(e-s+1);
+			while(s<=e)
+			{
+				System.out.println(max);
+				tree temp=a[f++];
+				
+				if(temp.l != null)
+					a[++r]=temp.l;
+				
+				if(temp.r!=null)
+					a[++r]=temp.r;	
+			}	
+		}
+		
+		System.out.println("width is:"+max);
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		   tree root=getnode(0);
+				root.l=getnode(1);
+				root.l.l=getnode(2);
+				root.l.r=getnode(3);
+				root.l.r.l=getnode(4);
+				root.l.r.r=getnode(5);
+				root.r=getnode(6);
+				root.r.r=getnode(7);
+				root.r.r.r=getnode(8);
+				root.r.r.r.l=getnode(9);
+				root.r.r.r.r=getnode(11);
+				root.r.r.r.l.l=getnode(12);
+				root.r.r.r.l.r=getnode(13);
+				width(root);			
+	}
+}

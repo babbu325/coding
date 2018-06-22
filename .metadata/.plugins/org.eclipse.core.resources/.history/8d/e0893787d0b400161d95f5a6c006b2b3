@@ -1,0 +1,18 @@
+import java.math.BigInteger;
+
+public class FindPrimeInEasyWay {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n =11;
+		System.out.println(fun(n));
+
+	}
+
+	private static boolean fun(int n) {
+		// TODO Auto-generated method stub
+		BigInteger b= new BigInteger(String.valueOf(n));
+		return b.isProbablePrime(0);
+	}
+
+}

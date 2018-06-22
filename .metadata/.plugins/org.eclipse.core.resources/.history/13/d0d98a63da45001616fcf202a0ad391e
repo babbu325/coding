@@ -1,0 +1,20 @@
+
+public class hello2 {
+    
+  private String name;
+    private hello3 bday;
+	
+	public  hello2(String n, hello3 bd )
+	{
+	 name=n;
+	 bday = bd;
+	 System.out.println(bday);
+	}
+	
+	 	
+	 public String toString()
+	 {
+		 return String.format("my name is %s, and bday is %s", name, bday);
+		 
+	 }
+}

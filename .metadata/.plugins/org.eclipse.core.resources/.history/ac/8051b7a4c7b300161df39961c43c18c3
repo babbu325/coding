@@ -1,0 +1,53 @@
+package matrix;
+
+import java.util.Scanner;
+
+public class LargestRectangle {
+
+
+	    public static void main(String[] args) {
+	        Scanner sc= new Scanner(System.in);
+	       // int n= sc.nextInt();
+	        int[] a= {2 ,1, 5 ,1 ,6 ,3 ,3};
+	        //for(int i=0;i<n;i++)
+	          //  a[i]=sc.nextInt();
+	  	int max=0;
+			int top=-1;
+			int i=0,area=0;
+			int[] s = new int[a.length];
+			s[++top]=0;
+			
+			for(i=1;i<a.length;i++){
+				if(a[i] >= a[s[top]]){
+					s[++top]=i;
+						
+				}
+				else{
+					while(a[s[top]]>a[i]){
+						area = a[s[top]]*(i-s[top]);
+					max = Math.max(max, area);
+					
+					top--;
+					if(top==-1)break;
+				}
+					s[++top]=i;
+				}
+				
+			}
+			for(int j:s)
+			System.out.println(j+" "+top);
+			System.out.println(max);
+			
+			while(top>=0){
+				if(top==0){
+					area = a[s[top]]*(i+1);
+					break;}
+				else {
+					area = a[s[top]]*(i-s[top]);
+				}
+				top--;
+				max = Math.max(max, area);
+			}
+	       System.out.println(max);
+		}
+	}

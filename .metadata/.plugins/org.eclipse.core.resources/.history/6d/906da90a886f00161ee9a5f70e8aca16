@@ -1,0 +1,62 @@
+package string;
+
+import java.util.Scanner;
+
+public class rechieRich {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int k=sc.nextInt();
+		
+		char[] a=new char[n];
+		String s=sc.next();
+		a=s.toCharArray();
+		
+		int i=0;
+		int c=0;
+		int j=a.length-1;
+		int[] index=new int[n];
+		int ind=-1;
+		
+		while(i<=j && c<k)
+		{	
+			if(a[i]!=a[j] )
+			{
+		       if(a[i]>a[j])
+                    a[j]=a[i];
+		       else a[i]=a[j];
+		    	   c++;
+		    	   index[++ind]=i;
+			}
+			i++;
+			j--;
+		}
+		ind=0;
+		while(c<k)
+		{
+			if(a[index[ind]] != '9'){
+			a[index[ind]] = '9';
+			a[(a.length-1)-index[ind]]='9';
+			c++;
+		}
+			}
+		 i=0;
+		 c=1;
+		 j=a.length-1;
+		 
+		while(i<=j)
+		{
+		if(&& a[i++]!=a[j--])
+			c=0;
+	}
+
+		if(c==1){
+			for(i=0;i<a.length;i++)
+				System.out.printf("%c",a[i]);
+		}
+		else System.out.println("-1");
+}
+}

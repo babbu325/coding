@@ -1,0 +1,16 @@
+
+public class whatfix2 {
+
+	public static void main(String[] args) {
+		whatfix2 ob = new whatfix2();
+		int a[] = {1,2,3};
+		fun(a);
+		System.out.println(a[0]);
+	}
+
+	private static void fun(int[] a) {
+		int[] b =a;
+		b[0]=122;
+		
+	}
+}

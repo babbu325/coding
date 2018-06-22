@@ -1,0 +1,50 @@
+package tree;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class replace_node_binary_tree_sum_inorder_predecessor_successor {
+
+	static Node root;
+	static ArrayList<Integer> a = new ArrayList<Integer>();
+	
+	public static void main(String[] args) {
+	replace_node_binary_tree_sum_inorder_predecessor_successor tree = new replace_node_binary_tree_sum_inorder_predecessor_successor();
+	 tree.root = new Node(1);
+	 tree.root.l= new Node(2);
+	 tree.root.l.l = new Node(4);
+	 tree.root.l.r = new Node(5);
+	 tree.root.r = new Node(3);
+	 tree.root.r.l = new Node(6);
+	 tree.root.r.r = new Node(7);
+	 a.add(0);
+	 addToArray(root, a);
+	 a.add(0);
+	 replace(root,a,1);
+	 inorder(root);
+	}
+	
+	private static void replace(Node root, ArrayList<Integer> a2,int i) {
+		if(root==null) return;
+		replace(root.l,a,i);
+		root.d = a2.get(i-1)+ a.get(i+1);
+		i++;
+		replace(root.r, a,i);
+	}
+
+	private static void inorder(Node root) {
+		// TODO Auto-generated method stub
+		if(root==null)return;
+		inorder(root.l);
+		System.out.print(root.d+" ");
+		inorder(root.r);
+		
+	}
+	
+	private static void addToArray(Node root, ArrayList a) {
+		if(root==null)	return;
+		addToArray(root.l, a);
+		a.add(root.d);
+		addToArray(root.r, a);
+	}
+}

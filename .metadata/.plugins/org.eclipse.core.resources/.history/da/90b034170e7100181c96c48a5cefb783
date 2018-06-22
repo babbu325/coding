@@ -1,0 +1,47 @@
+package linkedlist;
+
+public class DrotatebyN {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DrotatebyN list = new DrotatebyN();
+		int[] a = {1,2,3,4,5,6,7,8,9};
+		Node head = null;
+		head = makelist(head, a);
+		print(head);
+		head = rotate(head, 2);
+		print(head);
+	}
+	private static Node rotate(Node head, int i) {
+		Node node = head;
+		while(node.r != null) node = node.r;
+		System.out.println(node.d);
+		node.r = head;
+		head.l = node;
+		for(int r=0; r<i;r++){
+			node = node.r;
+			head = head.r;
+		}
+	}
+	private static void print(Node head) {
+		while(head != null){
+			System.out.print(head.d+" ");
+			head = head.r;
+		}
+	}
+	private static Node makelist(Node root, int[] a) {
+		Node head = root;
+		for(int i : a){
+			Node node = new Node(i);
+			if(root==null){
+				head = node;
+				root=node;
+			}
+			else {
+				root.r = node;
+				node.l = root;
+				root= node;
+			}
+		}
+		return head;
+	}
+}

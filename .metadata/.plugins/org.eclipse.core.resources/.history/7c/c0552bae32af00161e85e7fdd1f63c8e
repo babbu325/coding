@@ -1,0 +1,27 @@
+//
+package string;
+
+public class trimExtraSpace {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+String s= "my name is ram  .  i am in class 1 0 th    .   " ;
+		String[] str = s.split("\\s");
+		for(String w: str)
+		System.out.print(w);
+		System.out.println();
+
+		String res="";
+		for(String w:str){
+			if(w.length()==1 && (w=="." || w==";" || w=="\"" )){
+					res = res.trim();
+					res = res+w; 
+				}
+				else res=res+w+" ";
+			}
+		res=res.trim();
+		System.out.println(res);
+		}
+		
+	}
+

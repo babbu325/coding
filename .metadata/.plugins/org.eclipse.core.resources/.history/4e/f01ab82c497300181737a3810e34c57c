@@ -1,0 +1,43 @@
+package matrix;
+
+class point{
+	int x,y;
+	point(int a,int b){
+		x=a;
+		y=b;
+	}
+}
+
+public class BinaryMaze {
+
+	
+	static int calculateD(int[][] m, int r, int c, point src, point dst){
+	if(m[src.x][src.y]!=1 && m[dst.x][dst.y]!=1)return -1;
+	
+	boolean vis[][] = new boolean[r][c]; 
+		
+		return 0;
+	}
+	
+	
+	public static void main(String[] args) {
+		int[][] mat =
+		    {
+		        { 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
+		        { 1, 0, 1, 0, 1, 1, 1, 0, 1, 1 },
+		        { 1, 1, 1, 0, 1, 1, 0, 1, 0, 1 },
+		        { 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+		        { 1, 1, 1, 0, 1, 1, 1, 0, 1, 0 },
+		        { 1, 0, 1, 1, 1, 1, 0, 1, 0, 0 },
+		        { 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		        { 1, 0, 1, 1, 1, 1, 0, 1, 1, 1 },
+		        { 1, 1, 0, 0, 0, 0, 1, 0, 0, 1 }
+		    };
+		int r = mat.length;
+		int c = mat[0].length;
+		point src = new point(0,0);
+		point dst = new point(3,4);
+		int res = calculateD(mat,r,c, src, dst);
+		System.out.println(res);
+	}
+}

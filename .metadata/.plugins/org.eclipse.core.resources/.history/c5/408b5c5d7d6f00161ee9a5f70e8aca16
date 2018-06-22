@@ -1,0 +1,19 @@
+package string;
+
+import java.util.Scanner;
+
+public class rechieRich {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int k=sc.nextInt();
+		char[] a=new char[n];
+		String s=sc.next();
+		a=s.toCharArray();
+		
+	}
+
+}

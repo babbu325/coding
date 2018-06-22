@@ -1,0 +1,17 @@
+package dynemicPrograming;
+
+public class MaximumSumSubMatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] m={
+				{ 1, 2,-1,-4,-20},
+				{-8,-3,  4,2,1},
+				
+		};
+		
+		
+
+	}
+
+}

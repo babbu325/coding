@@ -1,0 +1,45 @@
+package tree;
+
+public class replace_node_binary_tree_sum_inorder_predecessor_successor {
+
+	static Node root;
+	public static void main(String[] args) {
+	replace_node_binary_tree_sum_inorder_predecessor_successor tree = new replace_node_binary_tree_sum_inorder_predecessor_successor();
+	 tree.root = new Node(1);
+	 tree.root.l= new Node(2);
+	 tree.root.l.l = new Node(4);
+	 tree.root.l.r = new Node(5);
+	 tree.root.r = new Node(3);
+	 tree.root.r.l = new Node(6);
+	 tree.root.r.r = new Node(7);
+	 replace(root);
+	 inorder(root);
+		
+	}
+	private static void inorder(Node root2) {
+		// TODO Auto-generated method stub
+		if(root2==null)return;
+		inorder(root2.l);
+		System.out.println(root2.d+" ");
+		inorder(root2.r);
+		
+	}
+	private static void replace(Node root) {
+		if(root==null)	return;
+		
+		root.d = left(root.l) + right(root.r);
+		replace(root.l);
+		replace(root.r);
+	}
+	private static int right(Node r) {
+		if(r == null) return 0;
+		if(r.l!=null) return right(r.l);
+		return r.d;
+	}
+	private static int left(Node l) {
+		if(l==null) return 0;
+		if(l.r!=null)return left(l.r);
+		return l.d;
+	}
+
+}

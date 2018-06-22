@@ -1,0 +1,24 @@
+//verable size argument
+import java.util.Random;
+import java.util.Scanner;
+
+class hello {
+
+	public static void main(String args[])
+	{	
+		System.out.println("ave:"+avg(1,2,3,4,5,6,7,8,9));
+		
+	}
+	
+	
+	public static void avg(int...n)
+	{
+		int r=0;
+		for(int r :n)
+			
+		
+	}
+	
+	
+	
+}

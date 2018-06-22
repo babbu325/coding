@@ -1,0 +1,16 @@
+//this will create directries of files
+package file;
+
+import java.io.File;
+
+public class directries {
+
+	public static void main(String[] args) {
+		
+		File f = new File("C:/Users/anju/Desktop/CCSP.xlsx");
+		System.out.println(f.exists());
+		String[] s= new String[(int) f.length()];
+
+	}
+
+}

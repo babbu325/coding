@@ -1,0 +1,54 @@
+import java.io.*;
+import java.util.*;
+
+public class hack {
+	static int v = 1000000007;
+	static BufferedReader br;
+	static StringTokenizer tokenizer;
+	PrintWriter writer;
+	
+	static int nextInt() throws IOException {
+	    return Integer.parseInt(nextToken());
+	    }
+
+	    static String nextToken() throws IOException {
+	    while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+	        tokenizer = new StringTokenizer(br.readLine());
+	        }
+	    return tokenizer.nextToken();
+	    }
+		
+		
+		
+		public static void main(String[] args) throws IOException {
+			Scanner sc = new Scanner(System.in);
+			int t = sc.nextInt();
+			while(t--> 0){
+				String line = br.readLine();
+		        int n = nextInt();
+		        int m = nextInt();
+		        int k = nextInt();
+				long[][] a = new long[n][m];
+				for(int i=0; i<k; i++){
+					int x = nextInt();
+			        int y = nextInt();
+			        int p = nextInt();
+						a[x-1][y-1] = p;
+				}
+				System.out.println(fun(a,n,m));
+			}
+		}
+
+	private static long fun(long[][] a, int n, int m) {
+		for(int i=1;i<n;i++)a[i][0] +=a[i-1][0];
+		for(int i=1;i<n;i++)a[0][i] +=a[0][i-1];
+		for(int i=1;i<n;i++){
+			for(int j=1; j<m;j++){
+				a[i][j] = a[i][j-1]+a[i-1][j];
+			}
+		}
+		
+		return a[n-1][m-1]%v;
+	}
+
+}

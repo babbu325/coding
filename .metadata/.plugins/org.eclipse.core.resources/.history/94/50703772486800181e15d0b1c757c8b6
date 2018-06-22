@@ -1,0 +1,22 @@
+package tree;
+
+public class postorderFromInorderAndPre {
+
+	public static void main(String[] args) {
+		int[] in = {4,2,5,1,3,6};
+		int[] pre = {1,2,4,5,3,6};
+		postOrder(in,pre,in.length);
+	}
+
+	private static int postOrder(int[] in, int pre, int n){
+		for(int = i; i<n; i++)
+			if(pre==in[i]) return i;
+		return -1;
+	}
+	
+	private static void postOrder(int[] in, int[] pre, int n) {
+		int i = search(in,pre[0],n);
+		
+	}
+
+}

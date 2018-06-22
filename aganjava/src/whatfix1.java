@@ -1,0 +1,70 @@
+
+public class whatfix1 {
+	public static void main(String[] args) {
+
+	int W = 300;
+	int [][] a ={
+		{38,130,500},
+		{21,280,1800},
+		{13, 120,1500},
+	};
+	
+	 fun(W,a);
+	}
+
+	private static void fun(int W, int[][] a) {
+		int r = a[0].length;
+		int[] n = new int [r];
+		int[] w = new int [r];
+		int[] v= new int[r];
+		
+		for(int i=0;i<r;i++){
+			n[i]=a[i][0];
+			w[i]=a[i][1];
+			v[i]=a[i][2];
+		}
+	int res=  printknapSack(W, n,w, v, r);
+//	for(int i:res){
+		System.out.println(res);
+	
+	}
+
+	static int max(int a, int b) 
+    {
+        return (a > b) ? a : b;
+    }
+
+    static int printknapSack(int W, int[] nu, int wt[], int val[], int n)
+    {
+    	 int i, w;
+	     int K[][] = new int[n+1][W+1];
+	      
+	     for (i = 0; i <= n; i++)
+	     {
+	         for (w = 0; w <= W; w++)
+	         {
+	             if (i==0 || w==0)
+	                  K[i][w] = 0;
+	             else if (wt[i-1] <= w)
+	                   K[i][w] = max(val[i-1] + K[i-1][w-wt[i-1]],  K[i-1][w]);
+	             else
+	                   K[i][w] = K[i-1][w];
+	         }
+	      }
+ 
+        int res = K[n][W];
+        w = W;
+        int[] ress = new int[n+1];
+        for (i = n; i > 0 && res > 0; i--) {
+            if (res == K[i - 1][w])
+                continue;
+            else {
+                ress[i]=wt[i - 1];
+               res = res - val[i - 1];
+                w = w - wt[i - 1];
+            }
+        }
+        ress[0]=res;
+        return res;
+    }
+}

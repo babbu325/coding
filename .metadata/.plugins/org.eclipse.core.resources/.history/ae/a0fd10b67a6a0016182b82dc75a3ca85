@@ -1,0 +1,14 @@
+//http://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/
+package dynemicPrograming;
+
+public class shortestpath {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[3][3] mat=new int[][]{1 2 3,4,8,2,1,5,3};
+		
+
+	}
+
+}

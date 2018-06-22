@@ -1,0 +1,22 @@
+package string;
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class check {
+
+	public static void main(String[] args) {
+		
+		int[][] a = {{1,2,3,4},
+				     {2,3,4,1}};
+		String[] ar = {"1","2","3"};
+		List<Integer> al =new ArrayList<Integer>();
+		System.out.println(al);
+	}
+
+}

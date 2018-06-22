@@ -1,0 +1,19 @@
+package tree;
+
+class Node{
+	int d; 
+	Node l,r;
+	public Node(int i){
+		d=i;
+		l=r=null;
+	}
+}
+
+public class comman_ancestor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

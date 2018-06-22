@@ -1,0 +1,10 @@
+package string;
+
+public class divOf8 {
+
+	public static void main(String[] args) {
+		String n = "12340";
+		Syatem.out.println(fun(s));
+	}
+
+}

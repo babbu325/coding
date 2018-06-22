@@ -1,0 +1,55 @@
+ 
+import java.io.BufferedReader;
+//import java.io.InputStreamReader;
+import java.util.*;
+//import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class hello
+{	
+	static HashMap<Long,Long> mem=new HashMap();
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String n;
+		while((n=br.readLine())!=null)
+		{
+			long l=Long.parseLong(n);
+			
+			l=fun(l);
+			System.out.println(l);
+			
+		}
+	}
+	
+	
+   static long fun(long l)
+   {
+   	
+   	//base case
+   	if(l<12)
+   	  return l;
+   	
+   	else if(l==12)
+   	   return 13;
+   	   
+   	 
+   	else if(mem.containsKey(l))
+   	   return mem.get(l);
+   	  
+   	else
+   	{
+   		
+   		long max=Math.max(l,fun(l/2)+fun(l/3)+fun(l/4));
+   		
+   		mem.put(l,max);
+   		
+   	}
+   	return mem.get(l);
+   	
+   }
+} 
+ 

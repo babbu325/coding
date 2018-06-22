@@ -1,0 +1,83 @@
+package tree;
+
+import java.util.Stack;
+
+public class formExpressionTree { 
+	public static void main(String[] args) {
+		formExpressionTree tr = new formExpressionTree();
+		String s = "ab+ef*g*-";
+		char[] a = s.toCharArray();
+		Nodec root= tr.makeExpressionTree(a);
+		tr.inorder(root);
+		System.out.println(Evaluate(root));
+	}
+
+	private static char[] Evaluate(Nodec root) {
+		if(isOperator(root.d)){
+			
+		}
+		return null;
+	}
+
+	private static int calculate(char a, char o, char b){
+		int res=0;
+		switch (o) {
+		case '+':
+			res= ((int)a-48) + ((int)b-48);
+			break;
+		
+		case '-':
+			res= ((int)a-48) - ((int)b-48);
+			break;
+		
+		case '*':
+			res= ((int)a-48) * ((int)b-48);
+			break;
+		
+		case '/':
+			res= ((int)a-48) / ((int)b-48);
+			break;
+		
+		case '^':
+			res= Math.pow(((int)a-48),((int)b-48));
+			break;
+		
+			
+		default:
+			break;
+		}
+		
+	}
+	
+	private static void inorder(Nodec root) {
+		if(root==null) return;
+		inorder(root.l);
+		System.out.print(root.d+" ");
+		inorder(root.r);
+	}
+
+	private static Nodec makeExpressionTree(char[] a) {
+		Stack<Nodec> s = new Stack<Nodec>();
+		for(int i=0; i<a.length ; i++){
+			if(!isOperator(a[i])){
+				Nodec n1 = new Nodec(a[i]);
+				s.push(n1);
+			}
+			else{
+				Nodec n1, n2,n3= new Nodec(a[i]);
+				n1 = s.pop();
+				n2 = s.pop();
+				n3.r = n1;
+				n3.l = n2;
+				s.push(n3);
+			}
+		}
+		return s.pop();
+	}
+
+	private static boolean isOperator(char c) {
+		if(c=='+' || c=='-' || c=='*' || c== '*' || c=='^') return true;
+		return false;
+	}
+
+}

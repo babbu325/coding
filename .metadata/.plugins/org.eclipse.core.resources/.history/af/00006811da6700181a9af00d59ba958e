@@ -1,0 +1,26 @@
+package tree;
+
+public class formExpressionTree { 
+	public static void main(String[] args) {
+		String s = "ab+ef*g*-";
+		char[] a = s.toCharArray();
+		Node root= makeExpressionTree(a);
+		inorder(root);
+
+	}
+
+	private static void inorder(Node root) {
+		// TODO Auto-generated method stub
+		if(root==null) return;
+		inorder(root.l);
+		System.out.println(root.d);
+		inorder(root.r);
+		
+	}
+
+	private static Node makeExpressionTree(char[] a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

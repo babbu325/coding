@@ -1,0 +1,11 @@
+package graph;
+
+public class cycleInDirectedgraph {
+
+	static Graph g;
+	public static void main(String[] args) {
+     g = new Graph(4);
+		
+	}
+
+}

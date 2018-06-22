@@ -1,0 +1,53 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class gsachs_practice{
+public static final int MOD = 1000000007  ;
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in) ; 
+		int t = scn.nextInt(); 
+		while(t-- >0 ){
+			int x = scn.nextInt() , y = scn.nextInt() , z = scn.nextInt() ; 
+			System.out.println(number(x , y , z));
+		}
+		scn.close();
+	}
+
+	public static long number(int x, int y, int z) {
+		long rv = 0 ;
+		long[][][] sum = new long[x + 1][y + 1] [z + 1] ;
+		long[][][] count = new long[x + 1][y + 1] [z + 1] ; 
+		count[0][0][0] = 1 ; 
+		for (int i = 0; i <= x; i++) {
+			for (int j = 0; j <= y; j++) {
+				for (int k = 0; k <= z; k++) {
+					if(i != 0){
+						sum[i][j][k] += ((sum[i - 1][j][k] *10 )+ (4 * count[i - 1][j][k])) % MOD ;
+						sum[i][j][k] %= MOD ;
+						count[i][j][k] += count[i - 1][j][k] ; 
+						count[i][j][k] %= MOD ;
+					}
+					if(j != 0){
+						sum[i][j][k] += ((sum[i][j - 1][k] *10) + (5 * count[i][j - 1][k])) % MOD; 
+						sum[i][j][k] %= MOD ;
+						count[i][j][k] += count[i][j - 1][k] ; 
+						
+						count[i][j][k] %= MOD ;
+					}
+					if(k != 0){
+						sum[i][j][k] += ((sum[i][j][k - 1] *10) + (6 * count[i][j][k - 1]))%MOD ; 
+						sum[i][j][k] %= MOD ;
+						count[i][j][k] += count[i][j][k - 1] ; 
+						
+						count[i][j][k] %= MOD ;
+					}
+					rv += sum[i][j][k] ;
+					rv %= MOD ;
+				}
+			}
+		}
+
+		return rv % MOD;
+	}
+	
+}
